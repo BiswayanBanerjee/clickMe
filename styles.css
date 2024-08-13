@@ -1,0 +1,200 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#container {
+    position: relative;
+    text-align: center;
+}
+
+#bottle {
+    width: 150px;
+    cursor: pointer;
+    position: relative;
+    animation: rotate 0.5s linear infinite; /* Speed up the rotation */
+}
+
+@keyframes rotate {
+    0% { transform: rotate(-10deg); }
+    50% { transform: rotate(10deg); }
+    100% { transform: rotate(-10deg); }
+}
+
+#click-text {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff5722;
+    padding: 10px 20px;
+    border: 2px solid #ff5722;
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#click-text:hover {
+    background-color: #ff5722;
+    color: white;
+}
+
+#message-container {
+    display: none;
+}
+
+#anniversary-message {
+    font-size: 4em;
+    margin: 20px 0;
+    color: white;
+    font-family: 'Great Vibes', cursive;
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-30px); }
+}
+
+#count-message {
+    font-size: 1.5em;
+    margin: 10px 0;
+    color: white;
+}
+
+#continue-prompt {
+    margin-top: 20px;
+}
+
+button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* Celebration Styles */
+#celebration {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    overflow: hidden;
+    display: none;
+}
+
+.confetti {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: #ff0;
+    border-radius: 50%;
+    animation: confettiFall 2s linear infinite;
+}
+
+@keyframes confettiFall {
+    0% { transform: translateY(0) rotate(0); }
+    100% { transform: translateY(100vh) rotate(360deg); }
+}
+
+.confetti:nth-child(1) {
+    background-color: #ff0000;
+    left: 10%;
+    animation-duration: 1.5s;
+}
+
+.confetti:nth-child(2) {
+    background-color: #00ff00;
+    left: 30%;
+    animation-duration: 1.8s;
+}
+
+.confetti:nth-child(3) {
+    background-color: #0000ff;
+    left: 50%;
+    animation-duration: 2s;
+}
+
+.confetti:nth-child(4) {
+    background-color: #ffff00;
+    left: 70%;
+    animation-duration: 2.2s;
+}
+
+.confetti:nth-child(5) {
+    background-color: #ff00ff;
+    left: 90%;
+    animation-duration: 2.5s;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    #bottle {
+        width: 120px; /* Smaller image size for tablets and smaller devices */
+    }
+
+    #click-text {
+        font-size: 18px; /* Adjust text size */
+        padding: 8px 16px;
+    }
+
+    #anniversary-message {
+        font-size: 1.8em;
+    }
+
+    #count-message {
+        font-size: 1.3em;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    #bottle {
+        width: 100px; /* Even smaller image size for mobile phones */
+    }
+
+    #click-text {
+        font-size: 16px;
+        padding: 6px 12px;
+    }
+
+    #anniversary-message {
+        font-size: 1.5em;
+    }
+
+    #count-message {
+        font-size: 1.2em;
+    }
+
+    button {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+}
